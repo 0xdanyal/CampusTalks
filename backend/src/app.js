@@ -4,10 +4,10 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const errorMiddleware = require("./middlewares/error.middleware");
 
-const authRoutes   = require("./modules/auth/auth.routes");
-const userRoutes   = require("./modules/users/user.routes");
-const eventRoutes  = require("./modules/events/event.routes");
-const pollRoutes   = require("./modules/polls/poll.routes");
+const authRoutes = require("./modules/auth/auth.routes");
+const userRoutes = require("./modules/users/user.routes");
+const eventRoutes = require("./modules/events/event.routes");
+const pollRoutes = require("./modules/polls/poll.routes");
 
 const app = express();
 
@@ -21,7 +21,7 @@ app.use(cors({
 // ── Rate limiting (tighter on auth) ──────────────────────────────────────────
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 min
-  max: 20,
+  max: 500, // Increased to prevent lockouts during development/page reloads
   message: { success: false, message: "Too many requests, try again later." },
 });
 
@@ -35,14 +35,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // ── Routes ────────────────────────────────────────────────────────────────────
-app.use("/api/auth",   authLimiter, authRoutes);
-app.use("/api/users",  userRoutes);
+app.use("/api/auth", authLimiter, authRoutes);
+app.use("/api/users", userRoutes);
 app.use("/api/events", eventRoutes);
-app.use("/api/polls",  pollRoutes);
+app.use("/api/polls", pollRoutes);
 
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get("/api/health", (_, res) =>
-  res.json({ success: true, message: "CampusConnect API is alive 🎓" })
+  res.json({ success: true, message: "CampusTalks API is alive 🎓" })
 );
 
 // ── 404 ───────────────────────────────────────────────────────────────────────

@@ -1,7 +1,7 @@
 {
-  "name": "campusconnect-backend",
+  "name": "campustalks-backend",
   "version": "1.0.0",
-  "description": "CampusConnect MVP API",
+  "description": "CampusTalks MVP API",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

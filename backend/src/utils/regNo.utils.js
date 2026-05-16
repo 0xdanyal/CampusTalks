@@ -2,7 +2,7 @@
  * regNo.utils.js
  * ─────────────────────────────────────────────────────────────────────────────
  * Pluggable reg-number validator.
- * When selling CampusConnect to another university, only this file changes.
+ * When selling CampusTalks to another university, only this file changes.
  *
  * Current format:  FA21-BSE-001
  *   Prefix  : FA (Fall) | SP (Spring)

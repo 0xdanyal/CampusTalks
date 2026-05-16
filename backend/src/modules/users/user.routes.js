@@ -57,6 +57,18 @@ router.patch("/:id/suspend", protect, authorize("admin"), ah(async (req, res) =>
   return sendSuccess(res, 200, "User suspended", { user: user.toPublicJSON() });
 }));
 
+// PATCH /api/users/:id/unsuspend
+router.patch("/:id/unsuspend", protect, authorize("admin"), ah(async (req, res) => {
+  const user = await User.findById(req.params.id);
+  if (!user) return sendError(res, 404, "User not found");
+  if (user.status !== "suspended") return sendError(res, 400, "User is not suspended");
+
+  user.status       = "active";
+  user.adminNote    = req.body.note || "Unsuspended by admin";
+  await user.save();
+  return sendSuccess(res, 200, "User unsuspended", { user: user.toPublicJSON() });
+}));
+
 // PATCH /api/users/:id/graduate
 router.patch("/:id/graduate", protect, authorize("admin"), ah(async (req, res) => {
   const user = await User.findById(req.params.id);

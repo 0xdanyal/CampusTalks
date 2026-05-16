@@ -20,7 +20,7 @@ const User     = require("../src/modules/users/user.model");
 
     const admin = await User.create({
       regNo:        "ADMIN-001",
-      name:         "CampusConnect Admin",
+      name:         "CampusTalks Admin",
       password:     process.env.ADMIN_PASSWORD || "Admin@12345",
       department:   "ADMIN",
       batch:        "ADMIN",
