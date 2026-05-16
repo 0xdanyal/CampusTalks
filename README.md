@@ -8,12 +8,27 @@ A platform where **verified university students** create events, run polls, and 
 
 ## Screenshots
 
-| | |
-|---|---|
-| ![Register](./screenshots/register.png) ![Login](./screenshots/login.png) |
-| ![Admin Dashboard](./screenshots/AdminDashboard.png) | ![Manage Students](./screenshots/ManageUsers.png) |
-| ![Feed](./screenshots/feed.png) | ![Profile](./screenshots/profile.png) |
-| ![Pending Registration](./screenshots/pendingRegisteration.png)
+### Register Page
+![Register Page](./screenshots/register.png)
+
+### Login Page
+![Login Page](./screenshots/login.png)
+
+### Pending Registration Error
+![Pending Registration](./screenshots/pendingRegisteration.png)
+
+### Admin Dashboard
+![Admin Dashboard](./screenshots/AdminDashboard.png)
+
+### Manage Users
+![Manage Users](./screenshots/ManageUsers.png)
+
+### Feed Page
+![Feed Page](./screenshots/feed.png)
+
+### Profile Page
+![Profile Page](./screenshots/profile.png)
+
 ---
 
 ## Features
@@ -95,3 +110,6 @@ CLIENT_URL=http://localhost:5173
 - **Instant revocation** — session invalidated immediately when a student is suspended or graduated
 - **No reg number clashes** — partial unique index allows the same number across graduated and active users
 - **Rate limiting** — 200 requests / 15 min on all auth routes
+
+
+Built by [Danyal](https://linkedin.com/in/danyal-dev) — a self-taught developer from Islamabad, Pakistan.
