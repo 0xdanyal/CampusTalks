@@ -1,0 +1,191 @@
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.admin-header {
+  padding: 2.5rem;
+  border-left: 6px solid var(--accent-primary);
+  background: linear-gradient(to right, rgba(99, 102, 241, 0.08), transparent);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  background-color: white;
+}
+
+.admin-header-title {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.admin-header-title h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.admin-header-title p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.text-primary {
+  color: var(--accent-primary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.admin-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.admin-search {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.admin-search .input-field {
+  width: 100%;
+  padding-left: 2.8rem;
+  background: white;
+  border: 2px solid var(--bg-secondary);
+  border-radius: var(--radius-full);
+}
+
+/* Table */
+.admin-table-container {
+  overflow-x: auto;
+  padding: 0;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table th {
+  font-weight: 800;
+  color: var(--text-secondary);
+  background: var(--bg-hover);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tbody tr {
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.user-info-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.font-medium {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.text-xs {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.action-sm {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+}
+
+.admin-loading,
+.admin-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  color: var(--text-secondary);
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .admin-header {
+    padding: 1.5rem;
+  }
+  
+  .admin-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .admin-search {
+    max-width: 100%;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 1rem;
+  }
+  
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+}
